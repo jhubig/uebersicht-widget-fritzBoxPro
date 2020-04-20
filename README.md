@@ -8,7 +8,7 @@
 [![Github All Releases](https://img.shields.io/github/watchers/jhubig/uebersicht-widget-fritzBoxPro?style=social)](https://github.com/jhubig/uebersicht-widget-fritzBoxPro/watchers)
 
 # fritzBoxPro widget
-Widget for Übersicht `http://tracesof.net/uebersicht/` to display data of your Fritz!Box
+Widget for Übersicht http://tracesof.net/uebersicht/ to display data of your Fritz!Box
 
 ![banner.png](img/banner.png?raw=true "fritzBoxPro widget")
 
