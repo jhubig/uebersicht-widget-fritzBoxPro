@@ -76,6 +76,12 @@ Now you can change the position of the widget in the index.coffee file:
 pos_top		= '180px'\
 pos_left	= '330px'
 ```
+----
+
+## Credits
+
+Design is based on the great "Calender Plan - Task Events App" (https://dribbble.com/shots/4594817-Calendar-Plan-Tasks-Events-App-Freebies). Go check out Brice Séraphin's other work: https://dribbble.com/briceseraphin
+
 
 ----
 
