@@ -7,9 +7,7 @@
 # The following script should work from FritzOS 6.0 on-
 # wards.
 #
-# Protokoll TR-064 was used to control the Fritz!Box and
-# Fritz!Repeater. For sure not all commands are
-# available on Fritz!Repeater.
+# Protokoll TR-064 is used to get data from the Fritz!Box.
 # Additional info and documentation can be found here:
 
 # http://fritz.box:49000/tr64desc.xml
@@ -24,6 +22,10 @@
 [[ -z "$BoxIP" ]] && BoxIP="fritz.box"
 [[ -z "$BoxUSER" ]] && BoxUSER="YourUser"
 [[ -z "$BoxPW" ]] && BoxPW="YourPW"
+
+#******************************************************#
+#*********************** SCRIPT ***********************#
+#******************************************************#
 
 #******************************************************#
 #*********************** SCRIPT ***********************#

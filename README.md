@@ -18,7 +18,19 @@ Widget for Übersicht `http://tracesof.net/uebersicht/` to display data of your 
 
 Currently the following data is collected from your FritzBox
 
-TBC
+- Firmware version
+- Provider name
+- Uptime
+- External IP Address
+- Info about 2.4 Ghz WiFi
+- Info about 5 Ghz WiFi
+- Info about Guest WiFi
+- Answering machine name
+- New and total number of calls
+
+There is a notification indication for new firmware update and new calls on answering machine.
+
+![NewUpdateAvailable.gif](img/NewUpdateAvailable.gif?raw=true "New Update Notification")
 
 **Becoma a part of it**   
 Do you have any ideas to improve or extend the existing functionality? Feel free to raise an issue or create a pull request. Thanks.

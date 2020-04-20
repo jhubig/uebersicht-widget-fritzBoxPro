@@ -2,39 +2,11 @@
 # fritzBoxPro for Übersicht
 # Created April 2020 by Johannes Hubig
 
-# THEME OPTIONS: dark or light	(default is dark)
-
-theme		= 'light'
-
 # Position of the widget on your screen
-pos_top		= '90px'
-pos_left	= '310px'
+pos_top		= '120px'
+pos_left	= '370px'
 
 #-----------------------------------------------------------------------#
-
-if theme == 'dark'
-  titleColor	= '#999999'
-  infoColor		= '#CCCCCC'
-  dataColor		= '#FFFFFF'
-  lineColor		= '#43ace6'
-  barColor    = '#777777'
-  bkground		= 'rgba(#000, 0.5)'
-
-else if theme == 'light'
-  titleColor	= '#71FF71'
-  infoColor		= '#71FF71'
-  dataColor		= '#FFFFFF'
-  lineColor		= '#FFFFFF'
-  barColor    = '#AAAAAA'
-  bkground		= 'rgba(#999, 0.5)'
-
-else
-  titleColor	= '#999999'
-  infoColor		= '#CCCCCC'
-  dataColor		= '#FFFFFF'
-  lineColor		= '#43ace6'
-  barColor    = '#777777'
-  bkground		= 'rgba(#000, 0.5)'
 
 command: "fritzBoxPro.widget/fritzBoxShell.sh"
 
@@ -51,12 +23,9 @@ style: """
      margin: auto
 
   .mobile-wrapper
-     background: rgba(255, 255, 255, .5)
-     /* relative with .today-box::before*/
-     z-index: 1  /*positive*/ // PARENT
+     background: rgba(255, 255, 255, 0.7)
      position: relative
-     /*---------*/
-     width: 350px
+     width: 360px
      min-height: 100%
      margin: auto
      padding: 10px 0 20px
@@ -64,103 +33,34 @@ style: """
      box-shadow: 0px 10px 30px -10px #000
      overflow: hidden
 
-  .header
-     padding-bottom: 0px
-     margin-bottom: 0px
-     .container
-        position: relative
-        font-size: 13px
-        margin-top: 0px
-        span
-           color: #444
-           font-family: 'Ramabhadra'
-           font-size: 10px
-           font-weight: 1000
-        h1
-           margin-top: 2px
-           color: #919294
-           font-size: 50px
-           font-weight: 300
-
-
-        &::before
-           content: ""
-           display: block
-           width: 0
-           height: 0
-           border: 6px solid transparent
-           border-left-color: #e8e8e8
-           position: absolute
-           bottom: -13px
-           right: 0px
-
-        &::after
-           content: ""
-           display: block
-           width: calc(100% - 10px)
-           height: 2px
-           background-color: #e8e8e8
-           position: relative
-           top: 8px
-
-
-
-
-  .today-box
-     background: linear-gradient(to left, #485fed, rgba(255, 200, 118, .25)), #485fed
+  .header-box
+     background: linear-gradient(to left, #485fed, rgba(255, 255, 255, .2)), #485fed
      color: #FFF
      padding: 4px 15px
      position: relative
      box-shadow: 0px 0px 20px -7px #485fed
-     margin-bottom: 20px
-     &::before
-        content: ""
-        background: linear-gradient(to left, #485fed, rgba(255, 44, 118, .25)), #485fed
-        opacity: 0.4
-        z-index: -1 // CHILD /*negative*/ /* relative with .mobile-wrapper it's his parent background*/
-        display: block
-        width: 100%
-        height: 40px
-        margin: auto
-        position: absolute
-        bottom: -13px
-        left: 50%
-        transform: translatex(-50%)
-        border-radius: 50%
-        box-shadow: 0px 0px 40px 0 #485fed
 
-     .breadcrumb
+     .header-subtitle
         font-weight: 400
         position: relative
         font-size: 12px
-        &::after
-           content: "\f3d1"
-           font-family: 'Ionicons'
-           vertical-align: middle
-           font-size: 10px
-           font-weight: 100
-           display: inline-block
-           color: #fff
-           text-align: center
-           position: absolute
-           left: 45px
-           top: 0px
+        text-shadow: 0px 0px 5px  rgba(#000, 0.5)
 
-
-     .date-title
+     .header-title
         font-size: 20px
         margin: 3px 0 0 0
         letter-spacing: 1px
         font-weight: 600
-        text-shadow: 0px 0px 5px  rgba(#000, 0.15)
+        text-shadow: 0px 0px 5px  rgba(#000, 0.5)
 
-     .plus-icon
+     .header-icon
         position: absolute
         top: 48%
         transform: translateY(-50%)
         right: 20px
 
   .data-section
+     margin-top: -8px
      .container
         h3
            color: #333
@@ -172,9 +72,9 @@ style: """
            &::before // for horizontal line at section title
               content: ""
               display: block
-              width: 75%
+              width: 78%
               height: 2px
-              background-color: #e8e8e8
+              background-color: #999
               position: absolute
               top: 60%
               right: 0
@@ -220,25 +120,47 @@ style: """
     left: 0px
     top: -1px
 
+  .icon_pulsing
+    width: auto
+    position: absolute
+    left: 0px
+    top: -1px
+
+  .icon_pulsing:before
+    position: absolute
+    top: 3px
+    left: 3px
+    width: 14px
+    height: 14px
+    border-radius: 50%
+    content: ''
+    box-shadow: inset 0 0 0 6px #f00
+    transition: transform 0.2s, opacity 0.2s
+    animation: pulsing 2.1s infinite
+    z-index: -1
+
+  @keyframes pulsing
+    0%
+      transform: scale(1)
+      opacity: 1
+
+    50%
+      transform: scale(2)
+      opacity: 1
+
+    100%
+      transform: scale(1)
+      opacity: 0
+
 """
 
 render: -> """
   <div class="mobile-wrapper">
 
-   <!--======= Header =======-->
-
-   <header class="header">
-      <div class="container">
-         <!--<span>NOT USED CURRENTLY</span>-->
-      </div>
-   </header>
-
-   <!--======= Title =======-->
-
-   <section class="today-box" id="today-box">
-      <h3 class="date-title">My Fritz!Box</h3>
-      <span class="breadcrumb" id="model">N/A</span>
-      <div class="plus-icon">
+   <section class="header-box" id="header-box">
+      <h3 class="header-title">My Fritz!Box</h3>
+      <span class="header-subtitle" id="model">N/A</span>
+      <div class="header-icon">
          <img style='vertical-align:middle; margin-top: 0px' src='fritzBoxPro.widget/FritzLogo70px.png'/>
       </div>
    </section>
@@ -252,7 +174,7 @@ render: -> """
          </h3>
          <div class="data-wrapper">
             <div class="data-item">
-               <div class="icon"><img id="firmware_icon" src='fritzBoxPro.widget/icons/accept_database.svg' height="20px;"/></div>
+               <div class="icon" id="firmware_div"><img id="firmware_icon" src='fritzBoxPro.widget/icons/accept_database.svg' height="20px;"/></div>
                <h4 class="data__point" id='firmwareVersion'>N/A</h4>
                <div class="data_point_sublabel" id="firmwareUpdateAvailable" style="display:none">N/A</div>
                <span class="data__title">Firmware</span>
@@ -333,7 +255,7 @@ render: -> """
                <span class="data__title">Name</span>
             </div>
             <div class="data-item">
-              <div class="icon"><img id="voicemail" src='fritzBoxPro.widget/icons/voicemail.svg' height="20px;"/></div>
+              <div class="icon" id="voicemail_div"><img id="voicemail" src='fritzBoxPro.widget/icons/voicemail.svg' height="20px;"/></div>
               <h4 class="data__point"><span id='nbOfCallsNew'> N/A</span> / <span id='nbOfCallsTotal'> N/A</span></h4>
               <span class="data__title">New / Total calls</span>
             </div>
@@ -406,9 +328,11 @@ update: (output,domEl) ->
     div.find('#firmware_icon').attr("src", "fritzBoxPro.widget/icons/data_backup.svg")
     div.find('#firmwareUpdateAvailable').html("Firmware update available. Visit http://fritz.box")
     div.find('#firmwareUpdateAvailable').attr("style", "display:block")
+    div.find('#firmware_div').attr("class", "icon_pulsing")
   else if (parseInt(values[12]) == 0)
     div.find('#firmware_icon').attr("src", "fritzBoxPro.widget/icons/accept_database.svg")
     div.find('#firmwareUpdateAvailable').attr("style", "display:none")
+    div.find('#firmware_div').attr("class", "icon")
 
 # --------------- Uptime display ------------------
   if (values[6] != "")
@@ -427,10 +351,17 @@ update: (output,domEl) ->
   if (values[9] != "")
     div.find('#nbOfCallsNew').html(values[9])
 
+    if(parseInt(values[9]) >= 1)
+      div.find('#voicemail_div').attr("class", "icon_pulsing")
+      div.find('#nbOfCallsNew').attr("style", "color:red")
+    else if(parseInt(values[9]) == 0)
+      div.find('#voicemail_div').attr("class", "icon")
+      div.find('#nbOfCallsNew').attr("style", "color:#333")
+
   if (values[10] != "")
     div.find('#nbOfCallsTotal').html(values[10].split(":")[1])
 
-  # --------------- Uptime display ------------------
+  # --------------- Provider name display ------------------
 
   if (values[11] != "")
     div.find('#providerName').html(values[11])
