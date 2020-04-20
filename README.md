@@ -38,9 +38,19 @@ Do you have any ideas to improve or extend the existing functionality? Feel free
 
 ## Setup
 
-### 1. fritzBoxShell.sh file for config
+### 1. Activate the TR064 interface and create a user on your Fritz!Box
 
-First of all you need to enter your username and hostname of your Fritz!Box in the fritzBoxShell.sh file:
+To be able to use the the TR-064 interface, it has to be activated on the Fritz!Box:
+
+![FritzBox_Activation_TR064.png](https://github.com/jhubig/uebersicht-widget-fritzBoxPro/blob/master/img/FritzBox_Activation_TR064.png?raw=true "FritzBox_Activation_TR064.png")
+
+In addition, a user needs to be available or created. This user needs to have access to Fritz!Box settings:
+
+![FritzBox_CreateUser_TR064.png](https://github.com/jhubig/uebersicht-widget-fritzBoxPro/blob/master/img/FritzBox_CreateUser_TR064.png?raw=true "FritzBox_CreateUser_TR064.png")
+
+### 2. fritzBoxShell.sh file for config
+
+First of all you need to enter your username (which was created in previous step)), password and hostname of your Fritz!Box in the fritzBoxShell.sh file:
 
 ```shell
 # Fritz!Box Config
@@ -55,16 +65,6 @@ Open a terminal and go to the widget folder (usually located under /Users/<yourU
 ```shell
 chmod 755 fritzBoxShell.sh
 ```
-
-### 2. Activate the TR064 interface and create a user on your Fritz!Box
-
-To be able to use the the TR-064 interface, it has to be activated on the Fritz!Box:
-
-![FritzBox_Activation_TR064.png](https://github.com/jhubig/uebersicht-widget-fritzBoxPro/blob/master/img/FritzBox_Activation_TR064.png?raw=true "FritzBox_Activation_TR064.png")
-
-In addition, a user needs to be available or created. This user needs to have access to Fritz!Box settings:
-
-![FritzBox_CreateUser_TR064.png](https://github.com/jhubig/uebersicht-widget-fritzBoxPro/blob/master/img/FritzBox_CreateUser_TR064.png?raw=true "FritzBox_CreateUser_TR064.png")
 
 ### 3. Start the engines
 
