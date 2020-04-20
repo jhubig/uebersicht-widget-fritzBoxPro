@@ -50,7 +50,7 @@ In addition, a user needs to be available or created. This user needs to have ac
 
 ### 2. fritzBoxShell.sh file for config
 
-First of all you need to enter your username (which was created in previous step)), password and hostname of your Fritz!Box in the fritzBoxShell.sh file:
+First of all you need to enter your username (which was created in previous step), password and hostname of your Fritz!Box in the fritzBoxShell.sh file:
 
 ```shell
 # Fritz!Box Config
