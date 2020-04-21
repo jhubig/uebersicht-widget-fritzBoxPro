@@ -10,6 +10,13 @@
 # fritzBoxPro widget
 Widget for Übersicht http://tracesof.net/uebersicht/ to display data of your Fritz!Box
 
+----
+
+## Version History
+- 202004xx: `1.0` - Initial Release (TBC)
+
+----
+
 ![banner.png](img/banner.png?raw=true "fritzBoxPro widget")
 
 ---
@@ -81,12 +88,6 @@ pos_left	= '330px'
 ## Credits
 
 Design is based on the great "Calender Plan - Task Events App" (https://dribbble.com/shots/4594817-Calendar-Plan-Tasks-Events-App-Freebies). Go check out Brice Séraphin's other work: https://dribbble.com/briceseraphin
-
-
-----
-
-## Version History
-- `1.0` - Initial Release (TBC)
 
 ----
 
