@@ -13,7 +13,7 @@ Widget for Übersicht http://tracesof.net/uebersicht/ to display data of your Fr
 ----
 
 ## Version History
-- 202004xx: `1.0` - Initial Release (TBC)
+- 20200429: `1.0` - Initial Release
 
 ----
 
@@ -88,6 +88,8 @@ pos_left	= '330px'
 ## Credits
 
 Design is based on the great "Calender Plan - Task Events App" (https://dribbble.com/shots/4594817-Calendar-Plan-Tasks-Events-App-Freebies). Go check out Brice Séraphin's other work: https://dribbble.com/briceseraphin
+
+Used the great Icon pack by Icons8. Thanks! https://github.com/icons8/flat-color-icons
 
 ----
 
