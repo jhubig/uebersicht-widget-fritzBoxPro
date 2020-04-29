@@ -1,0 +1,6 @@
+{
+  "name": "FritzBoxPro",
+  "description": "Widget for Übersicht to display data of your Fritz!Box like Firmware version, provider name, uptime and much more.",
+  "author": "Johannes Hubig",
+  "email": "johannes.hubig@gmail.com"
+}
