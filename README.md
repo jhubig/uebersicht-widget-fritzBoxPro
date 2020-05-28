@@ -39,7 +39,7 @@ There is a notification indication for new firmware update and new calls on answ
 
 ![NewUpdateAvailable.gif](img/NewUpdateAvailable.gif?raw=true "New Update Notification")
 
-**Becoma a part of it**   
+**Become a part of it**   
 Do you have any ideas to improve or extend the existing functionality? Feel free to raise an issue or create a pull request. Thanks.
 
 
