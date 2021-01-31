@@ -105,6 +105,18 @@ uri="urn:dslforum-org:service:WANIPConnection:1"
 action='GetInfo'
 
 curlOutput1=$(curl -s -k -m 5 --anyauth -u "$BoxUSER:$BoxPW" "http://$BoxIP:49000$location" -H 'Content-Type: text/xml; charset="utf-8"' -H "SoapAction:$uri#$action" -d "<?xml version='1.0' encoding='utf-8'?><s:Envelope s:encodingStyle='http://schemas.xmlsoap.org/soap/encoding/' xmlns:s='http://schemas.xmlsoap.org/soap/envelope/'><s:Body><u:$action xmlns:u='$uri'></u:$action></s:Body></s:Envelope>" | grep NewExternalIPAddress | awk -F">" '{print $2}' | awk -F"<" '{print $1}'"")
+
+# If previous output is empty, then maybe DSL is used in Fritz!Box
+if [[ $curlOutput1 == *""* ]]; then
+
+  location="/igdupnp/control/WANIPConn1"
+  uri="urn:schemas-upnp-org:service:WANIPConnection:1"
+  action='GetExternalIPAddress'
+
+  curlOutput1=$(curl -s -k -m 5 --anyauth -u "$BoxUSER:$BoxPW" "http://$BoxIP:49000$location" -H 'Content-Type: text/xml; charset="utf-8"' -H "SoapAction:$uri#$action" -d "<?xml version='1.0' encoding='utf-8'?><s:Envelope s:encodingStyle='http://schemas.xmlsoap.org/soap/encoding/' xmlns:s='http://schemas.xmlsoap.org/soap/envelope/'><s:Body><u:$action xmlns:u='$uri'></u:$action></s:Body></s:Envelope>" | grep NewExternalIPAddress | awk -F">" '{print $2}' | awk -F"<" '{print $1}'"")
+
+fi
+
 echo "$curlOutput1"
 
 ### ----------------------------------------------------------------------------------------------------- ###
