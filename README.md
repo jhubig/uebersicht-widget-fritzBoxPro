@@ -95,4 +95,4 @@ Used the great Icon pack by Icons8. Thanks! https://github.com/icons8/flat-color
 
 AVM, FRITZ!, Fritz!Box and the FRITZ! logo are registered trademarks of AVM GmbH - https://avm.de/
 
-© 2020 | Johannes Hubig
+© 2021 | Johannes Hubig
